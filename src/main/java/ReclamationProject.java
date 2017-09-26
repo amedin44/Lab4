@@ -8,19 +8,38 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+/***.
+ * @author amedin44
+ */
+
+public class ReclamationProject {
+    /**
+     * @param a first string
+     * @param b second String
+     * @return returns
+     */
+
+    static String doIt(final String a, final String b) {
+        String a2 = a;
+        String b2 = b;
+        if (a.length() > b.length())    {
+            String c = a2;
+            a2 = b2;
+            b2 = c;
+            }
+        String r = ""; // I love the ternary operator!
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+        for (int i = 0; i < a.length(); i++) {
+            for (int j = a.length() - i; j > 0; j--) {
+                for (int k = 0; k < b.length() - j; k++) {
+                    if (a.regionMatches(i, b, k, j) && j > r.length()) {
+                        r = a.substring(i, i + j);
+                    }
+                }
+             } // Ah yeah
+        }
+        return r;
+     }
 }
